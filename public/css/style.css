@@ -1,0 +1,91 @@
+*{
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	list-style: none;
+	box-sizing: border-box;
+}
+body{
+	font-family: montserrat;
+}
+nav{
+	background: blue;
+	height: 100px;
+	width: 100%;
+}
+label.logo{
+	color: white;
+	font-size: 50px;
+	line-height: 80px;
+	padding: 0px 100px;
+	font-weight: bold;
+}
+nav ul{
+	float: right;
+	margin: 50px;
+	}
+nav ul li{
+	display: inline-block;
+	line-height: 80px;
+	margin: 0px 10px;
+}
+nav ul li a{
+
+	color: white;
+	font-size: 20px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+a.active{
+	background: ;
+	transition: 0.5s;
+
+
+}
+a.hover{
+	background: red;
+	transition: 0.5s;
+
+}
+
+/*vedio*/
+
+header {
+  position: relative;
+  background-color: black;
+  height: 75vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+  position: relative;
+  z-index: 2;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
