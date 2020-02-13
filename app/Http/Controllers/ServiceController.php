@@ -12,9 +12,10 @@ class ServiceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Service $service)
     {
-       return view('services');
+  $users=$service->users;
+       return view('services',compact('users'));
     }
 
     /**

@@ -63,6 +63,23 @@
                             <input id="password-confirm" type="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="password_confirmation" required autocomplete="new-password">
                         </div>
 
+                        <div class="flex flex-wrap mb-6">
+                    <div class="md:flex md:items-center mb-6">
+
+                    <label class="md:w-full block text-blue-500 font-bold">
+                      <input class="mr-2 leading-tight" name="vendor" type="checkbox" value="true">
+                      <span class="text-sm">
+                        Register As Service Provider
+                      </span>
+                    </label>
+                                 @error('vendor')
+                                <p class="text-red-500 text-xs italic mt-4">
+                                    {{ $message }}
+                                </p>
+                            @enderror
+                    </div>
+                        </div>
+
                         <div class="flex flex-wrap">
                             <button type="submit" class="inline-block align-middle text-center select-none border font-bold whitespace-no-wrap py-2 px-4 rounded text-base leading-normal no-underline text-gray-100 bg-blue-500 hover:bg-blue-700">
                                 {{ __('Register') }}

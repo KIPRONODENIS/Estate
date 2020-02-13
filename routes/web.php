@@ -12,10 +12,11 @@
 */
 
 Route::get('/','indexController@index');
-Route::get('/service/{id}','ServiceController@index');
+Route::get('/service/{service}','ServiceController@index');
 Route::get('contact', function () {
     return view('contact');
 });
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

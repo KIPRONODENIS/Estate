@@ -19,7 +19,10 @@
 
                 <div class="w-full p-6">
                     <p class="text-gray-700">
-                        You are logged in!
+                       @role('Vendor') 
+
+                    <div>You are a vendor </div>
+                       @endrole
                        
                     </p>
                 </div>
