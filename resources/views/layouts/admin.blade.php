@@ -13,21 +13,23 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/@@fortawesome/fontawesome-free/css/all.min.css">
+
+      <script src="js/Chart.bundle.min.js" ></script>
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none">
     <div id="app">
 
-        <nav class="bg-blue-900 shadow  py-6">
+        <nav class="bg-white shadow-sm  py-6">
             <div class="container mx-auto px-6 md:px-0">
                 <div class="flex items-center justify-center">
                     <div class="mr-6">
                         <h1>
-                        <a href="{{ url('/') }}" class=" mx-3 text-lg font-semibold text-gray-100 no-underline hover:no-underline hover:text-red-500 text-4xl" style="text-shadow: 1px 1px 0 #bcbcbc, 1px 1px 0 #9c9c9c;">
-                            {{ config('app.name', 'Estate Service Finder') }}
+                        <a href="{{ url('/') }}" class=" mx-3 text-lg font-semibold text-red-500 no-underline hover:no-underline hover:text-gray-500 text-4xl" style="text-shadow: 1px 1px 0 #bcbcbc, 1px 1px 0 #9c9c9c;">
+                            {{ "Admin" }}
                         </a>
                         </h1>
                     </div>
-                    <div class="flex-1 text-right">
+                    <div class="flex-1 text-right text-gray-900">
                         @guest
                             <a class="no-underline hover:underline text-gray-300 text-sm p-3" href="{{ route('login') }}">{{ __('Login') }}</a>
                             @if (Route::has('register'))
@@ -36,14 +38,9 @@
                         @else
 
                             <a href="{{ url('/') }}"
-                               class="no-underline hover:underline text-gray-300 text-sm p-3"
+                               class="no-underline hover:underline text-gray-900 text-sm p-3"
                               >{{ __('Home') }}</a>                        
-                                  <a href="{{ url('/home') }}"
-                               class="no-underline hover:underline text-gray-300 text-sm p-3"
-                              >{{ __('Dashboard') }}</a>
-                           <a href="{{ route('vendors') }}"
-                               class="no-underline hover:underline text-gray-300 text-sm p-3"
-                               >{{ __('Vendors') }}</a>
+
 
                                
                 <div class="flex relative inline-block float-right">

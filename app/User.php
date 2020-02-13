@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','location_id',
     ];
 
     /**
@@ -41,5 +41,10 @@ class User extends Authenticatable
     //user and services 
     public function services() {
         return $this->belongsToMany(\App\Service::class)->withPivot('details');
+    }
+
+    //location 
+    public function location() {
+        return $this->belongsTo(\App\Location::class);
     }
 }

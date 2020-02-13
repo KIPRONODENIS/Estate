@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="flex flex-wrap  mx-4 ml-10">
+<div class="flex flex-wrap  mx-5 ml-10  justify-around">
 
 
 @foreach($users as $user)
-                <div class="bg-white shadow-xl rounded-lg overflow-hidden m-3 mx-4">
+                <div class="bg-white shadow-xl rounded-lg overflow-hidden m-3 mx-4 justify-between" style="width:300px">
                     <div class="bg-cover bg-center h-56 p-4" style="background-image: url(https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)">
                         <div class="flex justify-end">
                             <svg class="h-6 w-6 text-white fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -14,9 +14,9 @@
                         </div>
                     </div>
                     <div class="p-4">
-                        <p class="uppercase tracking-wide text-sm font-bold text-gray-700">{{$user->pivot->details}}</p>
+                        <p class="uppercase tracking-wide text-sm font-bold text-gray-700">{{$service->name}}</p>
                         <p class="text-3xl text-gray-900">$750,000</p>
-                        <p class="text-gray-700">742 Evergreen Terrace</p>
+                        <p class="text-gray-700 w-3/4">{{$user->pivot->details}}</p>
                     </div>
                     <div class="flex p-4 border-t border-gray-300 text-gray-700">
                         <div class="flex-1 inline-flex items-center">
@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div class="px-4 pt-3 pb-4 border-t border-gray-300 bg-gray-100">
-                        <div class="text-xs uppercase font-bold text-gray-600 tracking-wide">{{$user->location ?? "Nairobi"}}</div>
+                        <div class="text-xs uppercase font-bold text-gray-600 tracking-wide">{{$user->location->name ?? "Nairobi"}}</div>
                         <div class="flex items-center pt-2">
                             <div class="bg-cover bg-center w-10 h-10 rounded-full mr-3" style="background-image: url(https://images.unsplash.com/photo-1500522144261-ea64433bbe27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80)">
                             </div>

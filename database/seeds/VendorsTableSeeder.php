@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Service;
-
+use Faker\Generator as Faker;
 class VendorsTableSeeder extends Seeder
 {
     /**

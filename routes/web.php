@@ -17,6 +17,10 @@ Route::get('contact', function () {
     return view('contact');
 });
 
+Route::get('vendors','VendorsController@index')->name('vendors');
+
+//Admin Routes
+Route::get('/admin-view','AdminController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
