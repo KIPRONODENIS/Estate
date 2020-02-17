@@ -47,4 +47,13 @@ class User extends Authenticatable
     public function location() {
         return $this->belongsTo(\App\Location::class);
     }
+//sent orders
+    public function sents() {
+        return $this->hasMany(\App\Order::class,'service_owner');
+    }
+
+    //recieved orders
+    public function rorders() {
+        return $this->hasMany(\App\Order::class,'ordering_id');
+    }
 }

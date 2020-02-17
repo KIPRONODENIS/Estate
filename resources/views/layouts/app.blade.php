@@ -10,6 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
+      @livewireStyles
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/@@fortawesome/fontawesome-free/css/all.min.css">
@@ -89,6 +90,7 @@
     </div>
 
     <!-- Scripts -->
+    @livewireScripts
     <script src="{{ mix('js/app.js') }}"></script>
     <script>
     /*Toggle dropdown list*/

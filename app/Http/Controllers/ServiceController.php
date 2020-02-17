@@ -25,7 +25,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+    return view('service.create');
     }
 
     /**
@@ -36,7 +36,32 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+       $data= $request->validate([
+     'service'=>'required|min:3|max:60',
+     'description'=>'required|min:20|max:300',
+     'image'=>'required'
+       ]);
+
+
+       //IF GOES THROUGH
+       $path=$request->file('image')->store('public');
+$service=new Service([
+'name'=>$request->service,
+'description'=>$request->description,
+'image'=>$path
+]
+);
+       
+       //save to
+
+$save=\Auth::user()->services()->save($service,['details'=>$request->description]);
+
+
+session()->flash("success","Service Created successfully");
+
+
+return redirect()->route('service.create');
     }
 
     /**

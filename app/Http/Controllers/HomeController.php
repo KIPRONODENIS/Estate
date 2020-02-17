@@ -23,6 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $sent=\Auth::user()->sents;
+        $rorders=\Auth::user()->rorders;
+        $services=\Auth::user()->services;
+        return view('home',compact('sent','rorders','services'));
     }
 }
