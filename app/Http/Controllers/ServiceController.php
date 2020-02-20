@@ -72,7 +72,7 @@ return redirect()->route('service.create');
      */
     public function show(Service $service)
     {
-        //
+        return view('service.show',compact('service'));
     }
 
     /**
@@ -83,7 +83,7 @@ return redirect()->route('service.create');
      */
     public function edit(Service $service)
     {
-        //
+        return view('service.edit',compact('service'));
     }
 
     /**
@@ -95,7 +95,22 @@ return redirect()->route('service.create');
      */
     public function update(Request $request, Service $service)
     {
-        //
+        $request->validate([
+'service'=>'required|min:3|max:60',
+'description'=>'required|min:10:max:120'
+        ]);
+
+if($request->hasFile('image')) {
+    $image=$request->file('image')->store('public');
+}
+
+//udate a service
+
+$updated=$service->update(['name'=>$request->service,'description'=>$request->description,'image'=>$image ?? $service->image]);
+
+session()->flash('success',"successfully updated service");
+
+return redirect()->back();
     }
 
     /**
@@ -106,6 +121,9 @@ return redirect()->route('service.create');
      */
     public function destroy(Service $service)
     {
-        //
+        $service->delete();
+        session()->flash('deleted_service',"Service record  was deleted");
+
+        return redirect()->back();
     }
 }

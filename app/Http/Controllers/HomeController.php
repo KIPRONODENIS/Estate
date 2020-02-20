@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        
         $sent=\Auth::user()->sents;
         $rorders=\Auth::user()->rorders;
         $services=\Auth::user()->services;

@@ -9,6 +9,6 @@ class VendorsController extends Controller
     public function index() {
     	$services=Service::with('users')->get();
 
-    	dd($services);
+    	dd($services->first());
     }
 }

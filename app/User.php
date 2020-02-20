@@ -49,11 +49,11 @@ class User extends Authenticatable
     }
 //sent orders
     public function sents() {
-        return $this->hasMany(\App\Order::class,'service_owner');
+        return $this->hasMany(\App\Order::class,'ordering_id');
     }
 
     //recieved orders
     public function rorders() {
-        return $this->hasMany(\App\Order::class,'ordering_id');
+        return $this->hasMany(\App\Order::class,'service_owner');
     }
 }

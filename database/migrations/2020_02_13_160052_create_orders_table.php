@@ -19,6 +19,7 @@ class CreateOrdersTable extends Migration
             $table->unsignedBigInteger('service_id');
             $table->unsignedBigInteger('service_owner');
             $table->string('estate');
+            $table->string("status")->default("pending");
             $table->date('date');
             $table->timestamps();
         });

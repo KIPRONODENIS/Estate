@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use App\User;
 class RolePermissionSeeder extends Seeder
 {
     /**
@@ -23,5 +24,7 @@ class RolePermissionSeeder extends Seeder
                 // or may be done by chaining
         $role = Role::create(['name' => 'Vendor'])
             ->givePermissionTo(['edit service', 'delete service','create service','update service']); 
+
+      User::first()->assignRole('Vendor');
     }
 }
