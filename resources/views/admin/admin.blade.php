@@ -20,7 +20,7 @@
                             </div>
                             <div class="flex-1 text-right md:text-center">
                                 <h5 class="font-bold uppercase text-gray-500">Total Orders</h5>
-                                <h3 class="font-bold text-3xl">249 <span class="text-green-500"><i class="fas fa-caret-up"></i></span></h3>
+                                <h3 class="font-bold text-3xl">{{$orders}} <span class="text-green-500"><i class="fas fa-caret-up"></i></span></h3>
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                             </div>
                             <div class="flex-1 text-right md:text-center">
                                 <h5 class="font-bold uppercase text-gray-500">Total Users</h5>
-                                <h3 class="font-bold text-3xl">249 <span class="text-orange-500"><i class="fas fa-exchange-alt"></i></span></h3>
+                                <h3 class="font-bold text-3xl">{{$users}} <span class="text-orange-500"><i class="fas fa-exchange-alt"></i></span></h3>
                             </div>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                             </div>
                             <div class="flex-1 text-right md:text-center">
                                 <h5 class="font-bold uppercase text-gray-500">New Users</h5>
-                                <h3 class="font-bold text-3xl">2 <span class="text-yellow-600"><i class="fas fa-caret-up"></i></span></h3>
+                                <h3 class="font-bold text-3xl">{{$newusers}} <span class="text-yellow-600"><i class="fas fa-caret-up"></i></span></h3>
                             </div>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                             </div>
                             <div class="flex-1 text-right md:text-center">
                                 <h5 class="font-bold uppercase text-gray-500">Total Services</h5>
-                                <h3 class="font-bold text-3xl">152 </h3>
+                                <h3 class="font-bold text-3xl">{{$services}} </h3>
                             </div>
                         </div>
                     </div>
@@ -81,7 +81,7 @@
                             </div>
                             <div class="flex-1 text-right md:text-center">
                                 <h5 class="font-bold uppercase text-gray-500">Total Vendors</h5>
-                                <h3 class="font-bold text-3xl">152 </h3>
+                                <h3 class="font-bold text-3xl">{{$vendors}}</h3>
                             </div>
                         </div>
                     </div>
@@ -156,26 +156,10 @@
                     <!--Graph Card-->
                     <div class="bg-white border rounded shadow">
                         <div class="border-b p-3">
-                            <h5 class="font-bold uppercase text-gray-600">Users Per Month</h5>
+                            <h5 class="font-bold uppercase text-gray-600">{{ $chart1->options['chart_title'] }}</h5>
                         </div>
-                        <div class="p-5">
-                            <canvas id="chartjs-0" class="chartjs" width="undefined" height="undefined"></canvas>
-                            <script>
-                            new Chart(document.getElementById("chartjs-0"), {
-                                "type": "line",
-                                "data": {
-                                    "labels": ["January", "February", "March", "April", "May", "June", "July"],
-                                    "datasets": [{
-                                        "label": "Views",
-                                        "data": [65, 59, 80, 81, 56, 55, 40],
-                                        "fill": false,
-                                        "borderColor": "rgb(75, 192, 192)",
-                                        "lineTension": 0.1
-                                    }]
-                                },
-                                "options": {}
-                            });
-                            </script>
+                        <div class="p-5">  <h1></h1>
+                    {!! $chart1->renderHtml() !!}
                         </div>
                     </div>
                     <!--/Graph Card-->
@@ -194,4 +178,10 @@
 
     </div>
     <!--/container-->
+
+    <script type="text/javascript">
+        
+ {!! $chart1->renderChartJsLibrary() !!}
+{!! $chart1->renderJs() !!}
+    </script>
 @endsection
