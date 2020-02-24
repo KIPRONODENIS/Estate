@@ -35,8 +35,8 @@ Route::get('request/{order}/edit','RequestController@edit')->name('request.edit'
 Route::post('request/{order}/update','RequestController@store')->name('status.update');
 //Admin Routes
 
-Route::group(['prefix' => 'admin-U', 'as' => 'admin.'], function () {
-	Route::get('/home','AdminController@index')->name('home');
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+	Route::get('/','AdminController@index')->name('home');
 	Route::get('/services', 'AdminController@services')->name('services');
 	Route::get('/users', 'AdminController@users')->name('users');
 	Route::get('/vendors', 'AdminController@vendors')->name('vendors');
